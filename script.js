@@ -25,16 +25,18 @@ fetch(apiURL).then(function(response){
 
        var currentItemTitle = document.createElement('h1');
        var currentContainer = document.getElementById('current')
-       currentItemTitle.textContent= `Search: ${title} `
+       currentItemTitle.textContent= `Search: ${title} $${getPrimary}`
        currentContainer.appendChild(currentItemTitle)
 
-     
-       
-    
+   for(let i=0; i<getAll.length; i++){
+  var allResults =document.createElement('p');
+  allResults.textContent= `${getAll[i].products}`
+  currentContainer.appendChild(allResults);
 
-       console.log(item)
-       console.log(getPrimary)
-console.log(title)
+ 
+
+   }
+
 console.log(getAll)
 console.log(data)
 fetchList(item,title,getAll)
