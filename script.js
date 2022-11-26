@@ -4,14 +4,12 @@ var searchForm= document.getElementById('search-form')
 var searchInput= document.getElementById('search-input')
 
 
+
+
 searchForm.addEventListener('submit',function(event){
     event.preventDefault();
 
 var search = searchInput.value.trim();
-
-
-
-
 
 var apiURL = `https://api.redcircleapi.com/request?api_key=B53C1783A1D9456488669476C6A2783A&search_term=${search}&type=search`
 fetch(apiURL).then(function(response){
@@ -29,12 +27,19 @@ fetch(apiURL).then(function(response){
        currentItemTitle.textContent= `Search: ${title} `
        currentContainer.appendChild(currentItemTitle)
 
+     
+       
+    
+
        console.log(item)
 console.log(title)
 console.log(getAll)
+console.log(data)
+fetchList(item,title,getAll)
     }
 })
 
+searchInput.value="";
 
 })
 
