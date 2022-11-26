@@ -21,6 +21,7 @@ fetch(apiURL).then(function(response){
        var item = data.search_results[0].product
        var title = data.search_results[0].product.title.trim()
        var getAll = data.search_results
+       var getPrimary= data.search_results[0].offers.primary.price
 
        var currentItemTitle = document.createElement('h1');
        var currentContainer = document.getElementById('current')
@@ -32,6 +33,7 @@ fetch(apiURL).then(function(response){
     
 
        console.log(item)
+       console.log(getPrimary)
 console.log(title)
 console.log(getAll)
 console.log(data)
@@ -40,7 +42,7 @@ fetchList(item,title,getAll)
 })
 
 searchInput.value="";
-
+current.innerHTML='';
 })
 
 
